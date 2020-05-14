@@ -25,16 +25,16 @@ RUN pip3 install -r $HOME/requirements.txt
 # module installation
 
 ADD mltoys/ $HOME/mltoys
-RUN python3 -m compileall mltoys/*.py
 ADD setup.py $HOME
 RUN python3 setup.py install
 
 # tests
 
 ADD tests/*.py tests/*.sh tests/
-RUN python3 -m compileall tests/*.py
 
-# demos
+# examples
 
 ADD examples/*.py examples/
-RUN python3 -m compileall demos/*.py
+
+# compile all python files as sanity check
+RUN python3 -m compileall */*.py
