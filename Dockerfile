@@ -36,5 +36,5 @@ RUN python3 -m compileall tests/*.py
 
 # demos
 
-ADD demos/*.py demos/
+ADD examples/*.py examples/
 RUN python3 -m compileall demos/*.py
