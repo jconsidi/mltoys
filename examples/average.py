@@ -6,11 +6,12 @@ import mltoys
 
 
 class AverageModel(mltoys.types.MLToyBase):
-    def __init__(self, columns, feature_columns, target_columns):
+    def __init__(self, columns, feature_columns, target_columns, loss_function):
         super().__init__(
             columns=columns,
             feature_columns=feature_columns,
             target_columns=target_columns,
+            loss_function=loss_function,
         )
 
         self._training_rows = 0
@@ -48,6 +49,7 @@ def main():
                 columns=instance.columns,
                 feature_columns=instance.feature_columns,
                 target_columns=instance.target_columns,
+                loss_function=instance.loss_function,
             )
 
             model.fit(instance.training_data)

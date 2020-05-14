@@ -8,10 +8,11 @@ class MLToyBase:
     Base class defining shared conventions.
     """
 
-    def __init__(self, columns, feature_columns, target_columns):
+    def __init__(self, columns, feature_columns, target_columns, loss_function):
         self._columns = tuple(columns)
         self._feature_columns = tuple(feature_columns)
         self._target_columns = tuple(target_columns)
+        self._loss_function = loss_function
 
         if self.columns != ("id",) + self.feature_columns + self.target_columns:
             print(self.columns)
@@ -31,6 +32,10 @@ class MLToyBase:
         return self._feature_columns
 
     @property
+    def loss_function(self) -> str:
+        return self._loss_function
+
+    @property
     def target_columns(self) -> Tuple[str]:
         return self._target_columns
 
@@ -43,11 +48,11 @@ class MLToyInstance(MLToyBase):
             columns=columns,
             feature_columns=feature_columns,
             target_columns=target_columns,
+            loss_function=loss_function,
         )
 
         self._factory = factory
         self._seed = seed
-        self._loss_function = loss_function
 
     def calculate_loss(self, test_predictions) -> float:
         raise NotImplementedError()
@@ -55,10 +60,6 @@ class MLToyInstance(MLToyBase):
     @property
     def factory(self):
         return self._factory
-
-    @property
-    def loss_function(self) -> str:
-        return self._loss_function
 
     def seed(self):
         return self._seed
