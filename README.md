@@ -9,7 +9,7 @@ ML Toys follows the [factory method](https://en.wikipedia.org/wiki/Factory_metho
 An MLToyFactory object will generate random MLToyInstance objects unless a seed is provided.
 This allows an algorithm to be tested repeatedly with minimal worry about overfitting, since there will be a fresh MLToyInstance wraps its own set of training and test data.
 
-A [demo script estimating the training data average](demos/demo-average.py) is provided.
+An [example script estimating the training data average](examples/example-average.py) is provided.
 
 ```
 demo model using training average for all predictions:
