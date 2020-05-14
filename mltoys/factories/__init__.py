@@ -62,7 +62,7 @@ class LinearFunctionFactory(MLToyFactoryLocal):
 
         r = random.Random(seed)
 
-        d = random.randint(1, 10)
+        d = random.randint(2, 11)
         coefficients = _sample_cube(r, d)
 
         feature_columns = _feature_columns(d - 1)  # skip bias/constant
