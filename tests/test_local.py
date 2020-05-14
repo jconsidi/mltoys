@@ -12,7 +12,7 @@ from mltoys import MLToyInstanceLocal
 
 class InstanceLocalTestMixin:
     def check_loss(self, test_outputs, expected_loss):
-        actual_loss = self.instance.score(test_outputs)
+        actual_loss = self.instance.calculate_loss(test_outputs)
         self.assertAlmostEqual(actual_loss, expected_loss)
 
 
