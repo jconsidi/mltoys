@@ -40,7 +40,7 @@ class AverageModel(mltoys.types.MLToyBase):
 
 
 def main():
-    print("demo model using training average for all predictions:")
+    print("average model:")
 
     for factory in mltoys.get_factories():
         mltoys.test_models(model_class=AverageModel, factory=factory)
