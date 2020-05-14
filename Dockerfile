@@ -34,7 +34,7 @@ ADD tests/*.py tests/*.sh tests/
 
 # examples
 
-ADD examples/*.py examples/
+ADD examples/*.py examples/*.sh examples/
 
 # compile all python files as sanity check
 RUN python3 -m compileall */*.py
