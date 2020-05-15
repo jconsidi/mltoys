@@ -27,6 +27,7 @@ def register_factory(factory_class, **kwargs):
 # explicitly populate the local factories ##################
 ############################################################
 
+register_factory(factories.CircleFunctionFactory)
 register_factory(factories.ConstantFunctionFactory)
 register_factory(factories.LinearFunctionFactory)
 register_factory(factories.ParityFunctionFactory)
