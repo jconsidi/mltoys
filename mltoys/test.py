@@ -17,5 +17,5 @@ def test_models(model_class, factory):
         test_losses.append(test_loss)
 
     print(
-        f"{factory.__class__.__name__} : min/mean/max = {min(test_losses):.4f}/{sum(test_losses)/len(test_losses):.4f}/{max(test_losses):.4f}"
+        f"{factory.__class__.__name__} : min/mean/max = {min(test_losses):.4f}/{sum(test_losses)/len(test_losses):.4f}/{max(test_losses):.4f} ({instance.loss_function})"
     )
