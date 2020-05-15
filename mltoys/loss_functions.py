@@ -35,6 +35,11 @@ def categorical_crossentropy(expected_values, actual_values):
     if len(expected_values) != len(actual_values):
         raise RuntimeError("length mismatch")
 
+    # extend to binary if only one target
+    if len(expected_values) == 1:
+        expected_values = (expected_values[0], 1.0 - expected_values[0])
+        actual_values = (actual_values[0], 1.0 - actual_values[0])
+
     return sum(
         [
             e * (-log(a) if a > 0 else inf)
