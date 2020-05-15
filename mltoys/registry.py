@@ -29,3 +29,4 @@ def register_factory(factory_class, **kwargs):
 
 register_factory(factories.ConstantFunctionFactory)
 register_factory(factories.LinearFunctionFactory)
+register_factory(factories.ParityFunctionFactory)
