@@ -7,7 +7,7 @@ However, not all toy problems will be solvable with all algorithms.
 
 ML Toys follows the [factory method](https://en.wikipedia.org/wiki/Factory_method_pattern) design pattern, and provides MLToyFactory classes for each kind of toy problem.
 An MLToyFactory object will generate random MLToyInstance objects unless a seed is provided.
-This allows an algorithm to be tested repeatedly with minimal worry about overfitting, since there will be a fresh MLToyInstance wraps its own set of training and test data.
+This allows an algorithm to be tested repeatedly with minimal worry about overfitting, since each fresh MLToyInstance wraps its own set of training and test data.
 
 An [example script estimating the training data average](examples/example-average.py) is provided.
 
